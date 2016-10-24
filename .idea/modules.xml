@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/LoggingSystem.iml" filepath="$PROJECT_DIR$/.idea/LoggingSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/PHP_Web_Toolset.iml" filepath="$PROJECT_DIR$/.idea/PHP_Web_Toolset.iml" />
     </modules>
   </component>
 </project>
