@@ -20,9 +20,4 @@
 
     $dataConnection->close();
 
-    /*
-    echo $config->getConfigSetting("test").'<br>';
-    echo session_id().'<br>';
-    echo 'Hello World!';
-    */
 ?>
