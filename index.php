@@ -8,16 +8,11 @@
 
     //TODO: Create a tools file to include shared utilities - e.g. Normalise Path
 
+    require ('./Classes/Initialise.php');
+
     session_start();
-    require ('./Classes/Config.php');
-    require ('./Classes/Database.php');
-
-    $config = new Config();
-    $config->debug_OutputSettings();
-
-    $dataConnection = new Database($config->getConfigSetting('dbServer'),
-        $config->getConfigSetting('dbUsername'),$config->getConfigSetting('dbPassword'));
-
-    $dataConnection->close();
+    $_SESSION['Configuration'] = new Initialise();
+    $_SESSION['Configuration']->config->debug_OutputSettings();
+    $_SESSION['Configuration']->dataConnection->close();
 
 ?>

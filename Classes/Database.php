@@ -11,17 +11,18 @@ class Database
     private $dbServer;
     private $dbUsername;
     private $dbPassword;
+    private $dbName;
 
     private $dbConnection;
 
-    function __construct($server, $user, $password)
+    function __construct($server, $user, $password, $name)
     {
         try {
             if($server!=null AND $user!=null AND $password!=null) {
                 $this->dbServer = $server;
                 $this->dbUsername = $user;
                 $this->dbPassword = $password;
-
+                $this->dbName = $name;
                 $this->connect();
             } else {
                 //TODO: Add Error Handler
@@ -33,10 +34,12 @@ class Database
     }
 
     function connect(){
-        $this->dbConnection=mysqli_connect($this->dbServer,$this->dbUsername,$this->dbPassword);
-        if(mysqli_connect_error()){
+
+        $this->dbConnection = @mysqli_connect($this->dbServer, $this->dbUsername, $this->dbPassword, $this->dbName);
+
+        if(mysqli_connect_error()) {
             //TODO: Add Error Handler
-            throw new Exception('Connection Error');
+            throw new Exception('Connection Error : ' . mysqli_connect_error() . '<br>');
         }
     }
 

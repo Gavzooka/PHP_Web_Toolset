@@ -34,7 +34,6 @@ class Config
 
     function __construct()
     {
-
         //TODO: Add string to log actions -> Output once verified what logging in enabled
         //TODO: Once log actions implemented, add catch to log exceptions
         try {
@@ -49,9 +48,7 @@ class Config
                         if (property_exists($this, $key)) {
                             $this->$key = $value;
                         }
-                        /*else {
-                            echo 'Configuration item is not present.<br>';
-                        }*/
+
                     }
                 } else {
                     //TODO: Add Error Handler
@@ -64,7 +61,6 @@ class Config
         } catch (Exception $err){
             echo 'Error : '.$err->getMessage().'<br>';
         }
-
     }
 
     //TODO: Temporary function to check configuration. Remove?
